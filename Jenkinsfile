@@ -3,19 +3,19 @@ pipeline {
      stages {
           stage("Compile") {
                steps {
-                    sh "/opt/homebrew/Cellar/maven/3.8.6/libexec compile"
+                    sh "/opt/homebrew/bin/mvn compile"
                }
           }
           stage("Unit test") {
                steps {
-                    sh "/opt/homebrew/Cellar/maven/3.8.6/libexec test"
+                    sh "/opt/homebrew/bin/mvn test"
                }
           }
      
     
 stage("Package") {
      steps {
-          sh "/opt/homebrew/Cellar/maven/3.8.6/libexec package"
+          sh "/opt/homebrew/bin/mvn package"
      }
 }
 stage("Docker build") {
