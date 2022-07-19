@@ -3,19 +3,19 @@ pipeline {
      stages {
           stage("Compile") {
                steps {
-                    sh "/opt/homebrew/bin/mvn compile"
+                    sh "/usr/bin/mvn compile"
                }
           }
           stage("Unit test") {
                steps {
-                    sh "/opt/homebrew/bin/mvn test"
+                    sh "/usr/bin/mvn test"
                }
           }
      
     
 stage("Package") {
      steps {
-          sh "/opt/homebrew/bin/mvn package"
+          sh "/usr/bin/mvn package"
      }
 }
 stage("Docker build") {
